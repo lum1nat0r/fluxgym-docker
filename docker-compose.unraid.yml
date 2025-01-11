@@ -1,13 +1,12 @@
 services:
   fluxgym:
-    image: thelocallab/fluxgym-flux-lora-training
+    image: aguindehi/fluxgym
     container_name: fluxgym
     ports:
       - 7860:7860
     environment:
       - PUID=${PUID:-1000}
       - PGID=${PGID:-1000}
-      - DOWNLOAD_MODELS=true
     volumes:
       - /mnt/user/appdata/fluxgym:/app/fluxgym
     stop_signal: SIGKILL
